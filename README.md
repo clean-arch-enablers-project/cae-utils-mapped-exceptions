@@ -25,3 +25,13 @@ Each flavor is a subtype:
 ![image](https://github.com/clean-arch-enablers-project/cae-framework/assets/60593328/64385f5d-7d7e-4b0d-9fc1-77f62399a572)
 
 💡So, for example, If you are developing a REST API with Springboot, you could use your ```@ControllerAdvice``` to map, with the ```@ExceptionHandler``` methods, the ```NotFoundMappedException``` to return a 404 status code, the ```InputMappedException``` to return a 400 status code, and the ```InternalMappedException``` to return a 500. This way any exception extending the ```NotFoundMappedException``` would automatically return a 404, the ones extending the ```InputMappedException``` would return a 400 and the ```InternalMappedException``` ones a 500. No need to specify each type (_UserNotFoundException_, _CreditCardNotFoundException_, etc.) unless there is a good reason for it.
+
+Each MappedException will have two properties:
+
+- briefPublicMessage
+- details
+
+When an exception is supposed to contain internal information that wouldn't be cool to get exposed to clients, but necessary for troubleshooting, such info should be set to the ```details``` property. The ```briefPublicMessage``` is supposed to keep public data, commonly used for friendly external messages.
+
+- The ```InternalMappedException``` requires both properties initialized via constructor parameters, as internal problems should remain internal.
+- Both ```InputMappedException``` and ```NotFoundMappedException``` have the ```details``` property optional to get initialized, as usually they are problems created by the client misusage, so no need to keep info from them.
