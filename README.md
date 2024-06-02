@@ -1,4 +1,8 @@
-# ☕ cae-utils-mapped-exceptions
+# ✔️ cae-utils-mapped-exceptions
+☕ Java edition
+
+<br>
+
 Welcome to the repository for the open source CAE Mapped Exceptions library!
 
 ### ▶️ The artifact:
@@ -10,28 +14,22 @@ Welcome to the repository for the open source CAE Mapped Exceptions library!
 </dependency>
 ```
 
-### 💡 The concept:
+<br>
 
-Mapped Exceptions represent problems you know might happen during executions of your application's use cases. When calling an external service with an HTTP Client it is known that a 404 response might be retrieved, so a Mapped Exception could be created to represent this specific scenario. 
+State Symbol Key:
 
-Mapped Exceptions come in 3 flavors, each one is about a common problem scenario:
+- ``✅`` — _Under release state_
+- ``✔️`` — _Under snapshot state_
+- ``⏳`` — _Under full development state_
 
-- When something goes wrong and it is an internal problem (library APIs being misused)
-- When the problem was the input received from external scopes (service APIs being misused)
-- When the problem is about something not being found
+<br>
+<br>
+<br>
 
-Each flavor is a subtype:
+<p align="center">
+ 💡 proper documentation will soon be available.
+</p>
 
-![image](https://github.com/clean-arch-enablers-project/cae-framework/assets/60593328/64385f5d-7d7e-4b0d-9fc1-77f62399a572)
-
-💡So, for example, If you are developing a REST API with Springboot, you could use your ```@ControllerAdvice``` to map, with the ```@ExceptionHandler``` methods, the ```NotFoundMappedException``` to return a 404 status code, the ```InputMappedException``` to return a 400 status code, and the ```InternalMappedException``` to return a 500. This way any exception extending the ```NotFoundMappedException``` would automatically return a 404, the ones extending the ```InputMappedException``` would return a 400 and the ```InternalMappedException``` ones a 500. No need to specify each type (_UserNotFoundException_, _CreditCardNotFoundException_, etc.) unless there is a good reason for it.
-
-Each MappedException will have two properties:
-
-- briefPublicMessage
-- details
-
-When an exception is supposed to contain internal information that wouldn't be cool to get exposed to clients, but necessary for troubleshooting, such info should be set to the ```details``` property. The ```briefPublicMessage``` is supposed to keep public data, commonly used for friendly external messages.
-
-- The ```InternalMappedException``` requires both properties initialized via constructor parameters, as internal problems should remain internal.
-- Both ```InputMappedException``` and ```NotFoundMappedException``` have the ```details``` property optional to get initialized, as usually they are problems created by the client misusage, so no need to keep info from them.
+<br>
+<br>
+<br>
