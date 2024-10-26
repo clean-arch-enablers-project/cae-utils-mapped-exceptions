@@ -43,4 +43,12 @@ public class NotFoundMappedException extends MappedException {
         super(briefPublicMessage);
     }
 
+    public NotFoundMappedException(String briefPublicMessage, String details, Exception originalException){
+        super(briefPublicMessage, details, originalException);
+    }
+
+    public NotFoundMappedException(String briefPublicMessage, Exception originalException){
+        super(briefPublicMessage, originalException);
+    }
+
 }

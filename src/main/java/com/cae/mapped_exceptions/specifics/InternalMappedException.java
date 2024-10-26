@@ -33,4 +33,8 @@ public class InternalMappedException extends MappedException {
         super(briefPublicMessage, details);
     }
 
+    public InternalMappedException(String briefPublicMessage, String details, Exception originalException){
+        super(briefPublicMessage, details, originalException);
+    }
+
 }

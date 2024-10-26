@@ -39,5 +39,13 @@ public class InputMappedException extends MappedException {
         super(briefPublicMessage);
     }
 
+    public InputMappedException(String briefPublicMessage, String details, Exception originalException){
+        super(briefPublicMessage, details, originalException);
+    }
+
+    public InputMappedException(String briefPublicMessage, Exception originalException){
+        super(briefPublicMessage, originalException);
+    }
+
 
 }
