@@ -9,7 +9,7 @@ Welcome to the repository for the open source CAE Mapped Exceptions library!
 ```xml
 <dependency>
     <groupId>com.clean-arch-enablers</groupId>
-    <artifactId>mapped-exceptions</artifactId>
+    <artifactId>cae-mapped-exceptions</artifactId>
     <version>${version}</version>
 </dependency>
 ```
