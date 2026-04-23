@@ -1,5 +1,5 @@
 
-from ..mapped_exception import MappedException
+from cae_mapped_exceptions.mapped_exception import MappedException
 
 class InputMappedException(MappedException):
 
