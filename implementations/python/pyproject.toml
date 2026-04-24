@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cae-utils-mapped-exceptions"
-version = "1.0.0rc1"
+version = "1.0.0rc4"
 description = "Mapped exceptions utility library for Python"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -28,3 +28,6 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"cae_mapped_exceptions" = ["py.typed"]
